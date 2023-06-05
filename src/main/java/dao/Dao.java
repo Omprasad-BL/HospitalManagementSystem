@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.print.Doc;
 
 import dto.Doctor;
 import dto.Staff;
@@ -86,6 +87,21 @@ public Staff fetcStaff(int id) {
 
 public Doctor fetcDoctor(int id) {
 	return em.find(Doctor.class,id);
+}
+
+
+
+public void updateDoctor( Doctor doctor) {
+	// TODO Auto-generated method stub
+    et.begin();
+    em.merge(doctor);
+    et.commit();
+}
+
+public void updateStaff(Staff staff) {
+	    et.begin();
+	    em.merge(staff);
+	    et.commit();
 }
 	
 

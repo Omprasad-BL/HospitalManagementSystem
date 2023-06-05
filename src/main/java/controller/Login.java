@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+//import java.util.*;
 import dao.Dao;
 import dto.Doctor;
 import dto.Staff;
@@ -18,6 +18,9 @@ public class Login extends HttpServlet{
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	int id=Integer.parseInt(req.getParameter("username"));
 	String psw= req.getParameter("passowrd");
+	
+
+	
 	
 	Dao dao=new Dao();
 	Doctor doctor=dao.fetcDoctor(id);

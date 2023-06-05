@@ -1,13 +1,13 @@
 package dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
-import lombok.Data;
+//import lombok.Data;
 @Entity
 //@Data
 public class Doctor {
@@ -33,6 +33,9 @@ public class Doctor {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public String getName() {
+		return name;
 	}
 	public String name() {
 		return name;
@@ -94,6 +97,7 @@ public class Doctor {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
+
+
 	
 }
