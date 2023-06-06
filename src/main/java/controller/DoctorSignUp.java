@@ -50,7 +50,7 @@ import dto.Staff;
 //	    	Dao access= new Dao();
 	    	access.saveDoctor(doctor);
 	    		
-	    	resp.getWriter().print("<h1>Data saved Successfully</h1>");
+	    	resp.getWriter().print("<h1>Waiting for Approval</h1>");
 	    	resp.getWriter().print("<h1> your id is "+ doctor.getId()  +"</h1>");
 	    	
 	    	req.getRequestDispatcher("Login.html").include(req, resp);

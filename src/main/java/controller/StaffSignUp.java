@@ -44,13 +44,13 @@ public class StaffSignUp extends HttpServlet {
 //    	Dao access= new Dao();
     	access.saveStaff(staff);
     	
-    	resp.getWriter().print("<h1>Data saved Successfully</h1>");
+//    	resp.getWriter().print("<h1>Data saved Successfully</h1>");
     	resp.getWriter().print("<h1> your id is "+ staff.getId()  +"</h1>");
     	
     	req.getRequestDispatcher("Login.html").include(req, resp);
     	}
     	else {
-    		resp.getWriter().print("<h1>Data already exist</h1>");
+//    		resp.getWriter().print("<h1>Data already exist</h1>");
         	resp.getWriter().print("<h1> your id is "+ staff.getId()  +"</h1>");
         	
         	req.getRequestDispatcher("Login.html").include(req, resp);

@@ -13,7 +13,7 @@ public class Staff {
 	
 	@Id
 	   @GeneratedValue(generator = "staffid")
-	   @SequenceGenerator(initialValue = 2000,allocationSize = 1, name = "staffid" , sequenceName = "staffid")
+	   @SequenceGenerator(initialValue = 4000,allocationSize = 1, name = "staffid" , sequenceName = "staffid")
 	   
 	   private int id;
 	   private String name;

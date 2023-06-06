@@ -17,7 +17,7 @@ public class Login extends HttpServlet{
   @Override
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	int id=Integer.parseInt(req.getParameter("username"));
-	String psw= req.getParameter("passowrd");
+	String psw= req.getParameter("password");
 	
 
 	
@@ -25,12 +25,21 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	Dao dao=new Dao();
 	Doctor doctor=dao.fetcDoctor(id);
 	Staff staff=dao.fetcStaff(id);
+	
+	
+	
+	
+//	IF CONDITION
 	if(staff==null&& doctor==null && id!=999999) {
 		resp.getWriter().print("<h1> Incorrect id </h1>");
 		req.getRequestDispatcher("Login.html").include(req, resp);
 	}
 	
+//	ELSE CONDITION
+	
 	else {
+		
+//		STAFF LOGIN CONDITION
 		
 		if(staff!=null) {
 			if(staff.getPassowrd().equals(psw)) {
@@ -38,28 +47,38 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 			req.getRequestDispatcher("StaffHome.html").include(req, resp);
 			}
 			else {
-				resp.getWriter().print("<h1> staff success </h1>");
-				req.getRequestDispatcher("Login.html").include(req, resp);
-			}
-		}
-		if(doctor!=null) {
-			if(doctor.getPassowrd().equals(psw)) {
-			resp.getWriter().print("<h1> Doctor staff </h1>");
-			req.getRequestDispatcher("DoctorHome.html").include(req, resp);
-			}
-			else {
-				resp.getWriter().print("<h1> staff success </h1>");
+				resp.getWriter().print("<h1> wrong hello password</h1>");
 				req.getRequestDispatcher("Login.html").include(req, resp);
 			}
 		}
 		
+		
+		
+//		DOCTOR LOGIN CONDITION
+		
+		
+		if(doctor!=null) {
+			if(doctor.getPassowrd().equals(psw)) {
+			resp.getWriter().print("<h1> Doctor success </h1>");
+			req.getRequestDispatcher("DoctorHome.html").include(req, resp);
+			}
+			else {
+				resp.getWriter().print("<h1> wrong passowrd </h1>");
+				req.getRequestDispatcher("Login.html").include(req, resp);
+			}
+		}
+		
+		
+//		ADMIN LOGIN CONDITION
+		
+		
 		if(id==999999) {
-			if("999999"==psw) {
+			if(psw.equals("999999")) {
 				resp.getWriter().print("<h1> Success </h1>");
 				req.getRequestDispatcher("AdminHome.html").include(req, resp);
 			}
 			else {
-				resp.getWriter().print("<h1> staff success </h1>");
+				resp.getWriter().print("<h1>wrong passowrd </h1>");
 				req.getRequestDispatcher("Login.html").include(req, resp);
 			}
 		}
