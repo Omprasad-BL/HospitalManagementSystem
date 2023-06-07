@@ -1,6 +1,8 @@
- package controller;
+package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,29 +13,26 @@ import javax.servlet.http.HttpServletResponse;
 import dao.Dao;
 import dto.Doctor;
 import dto.Staff;
-@WebServlet("/ChangeStaffStatus")
-public class ChangeStaffStatus extends HttpServlet{
+@WebServlet("/FetchAllStaff")
+public class FetchAllStaff  extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
+		Dao dao=new Dao();
+		List<Staff> list= dao.fetcAllStaff();
 		
-		int id= Integer.parseInt(req.getParameter("id"));
-		Dao dao= new Dao();
-		Staff staff=dao.fetcStaff(id);
-		if (staff.isStatus()) {
-			staff.setStatus(false);
-			
+		if (list.isEmpty()) {
+			resp.getWriter().print("<h1> Nothing is Here </h1>");
+			req.getRequestDispatcher("Admin.jsp").include(req, resp);
 		}
 		else {
-			staff.setStatus(true);
-			
-			dao.updateStaff(staff);
-			resp.getWriter().print("<h1>Updated successfully </h1>");
-			req.setAttribute("list", dao.fetcAllStaff());
+			req.setAttribute("list", list);
 			req.getRequestDispatcher("ApproveStaff.jsp").include(req, resp);
 		}
 		
-	}
+		
+		}
 	
 
 }

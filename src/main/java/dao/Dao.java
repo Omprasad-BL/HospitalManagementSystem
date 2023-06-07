@@ -90,7 +90,7 @@ public Doctor fetcDoctor(int id) {
 }
 
 
-
+// UPDATE DOCTOR STATUS
 public void updateDoctor( Doctor doctor) {
 	// TODO Auto-generated method stub
     et.begin();

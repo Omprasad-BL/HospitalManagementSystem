@@ -12,15 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.Dao;
 import dto.Doctor;
-import dto.Staff;
-@WebServlet("/fetchAll")
-public class FetchAll  extends HttpServlet{
+import dto.Doctor;
+@WebServlet("/FetchAllDoctor")
+public class FetchAllDoctor  extends HttpServlet{
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
 		Dao dao=new Dao();
-		List<Staff> list= dao.fetcAllStaff();
+		List<Doctor> list= dao.fetcAllDoctor();
 		
 		if (list.isEmpty()) {
 			resp.getWriter().print("<h1> Nothing is Here </h1>");
@@ -28,7 +28,7 @@ public class FetchAll  extends HttpServlet{
 		}
 		else {
 			req.setAttribute("list", list);
-			req.getRequestDispatcher("ApproveStaff.jsp");
+			req.getRequestDispatcher("ApproveDoctor.jsp").include(req, resp);
 		}
 		
 		
