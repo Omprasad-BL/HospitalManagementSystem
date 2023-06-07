@@ -104,6 +104,14 @@ public void updateStaff(Staff staff) {
 	    et.commit();
 }
 	
+public List<Doctor> fetcAllDoctor() {
+//	return em.find(Doctor.class,id);
+	return em.createQuery("select x from Doctor x").getResultList();
+}
+
+public List<Staff> fetcAllStaff() {
+	return em.createQuery("select x from Staff x").getResultList();
+}
 
 		
 	

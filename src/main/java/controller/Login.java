@@ -20,8 +20,6 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	String psw= req.getParameter("password");
 	
 
-	
-	
 	Dao dao=new Dao();
 	Doctor doctor=dao.fetcDoctor(id);
 	Staff staff=dao.fetcStaff(id);
@@ -43,13 +41,21 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 		
 		if(staff!=null) {
 			if(staff.getPassowrd().equals(psw)) {
+				if (staff.isStatus()) {
+				
 			resp.getWriter().print("<h1> staff success </h1>");
 			req.getRequestDispatcher("StaffHome.html").include(req, resp);
 			}
 			else {
-				resp.getWriter().print("<h1> wrong hello password</h1>");
+				resp.getWriter().print("<h1> wait for admin approval</h1>");
 				req.getRequestDispatcher("Login.html").include(req, resp);
 			}
+			}
+			else {
+				resp.getWriter().print("<h1> wrong password</h1>");
+				req.getRequestDispatcher("Login.html").include(req, resp);
+			}
+			
 		}
 		
 		
@@ -59,11 +65,18 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 		
 		if(doctor!=null) {
 			if(doctor.getPassowrd().equals(psw)) {
+				if (doctor.isStatus()) {
+
 			resp.getWriter().print("<h1> Doctor success </h1>");
 			req.getRequestDispatcher("DoctorHome.html").include(req, resp);
 			}
 			else {
-				resp.getWriter().print("<h1> wrong passowrd </h1>");
+				resp.getWriter().print("<h1> wait for approval </h1>");
+				req.getRequestDispatcher("Login.html").include(req, resp);
+			}
+			}
+			else {
+				resp.getWriter().print("<h1> wrong password</h1>");
 				req.getRequestDispatcher("Login.html").include(req, resp);
 			}
 		}
@@ -75,7 +88,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 		if(id==999999) {
 			if(psw.equals("999999")) {
 				resp.getWriter().print("<h1> Success </h1>");
-				req.getRequestDispatcher("AdminHome.html").include(req, resp);
+				req.getRequestDispatcher("Admin.jsp").include(req, resp);
 			}
 			else {
 				resp.getWriter().print("<h1>wrong passowrd </h1>");
