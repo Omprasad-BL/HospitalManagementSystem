@@ -7,8 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<button> <a href="FetchAllStaff">Approve Staff</a> </button>
-	<button> <a href="FetchAllDoctor">Approve Doctor</a> </button>
+	<button> <a href="fetchAllStaff">Approve Staff</a> </button>
+	<button> <a href="fetchAllDoctor">Approve Doctor</a> </button>
 	
+	
+	<button> <a href="fetchAll">  View all</a> </button>
+	<button> <a href="logout.jsp">Logout</a> </button>
 </body>
 </html>

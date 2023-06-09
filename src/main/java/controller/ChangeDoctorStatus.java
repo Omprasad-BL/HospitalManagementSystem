@@ -26,12 +26,12 @@ public class ChangeDoctorStatus extends HttpServlet{
 		}
 		else {
 			doctor.setStatus(true);
-			
+		}
 			dao.updateDoctor(doctor);
 			resp.getWriter().print("<h1>Updated successfully </h1>");
 			req.setAttribute("list", dao.fetcAllDoctor());
 			req.getRequestDispatcher("ApproveDoctor.jsp").include(req, resp);
-		}
+		
 		
 	}
 	

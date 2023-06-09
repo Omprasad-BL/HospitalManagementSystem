@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 import javax.print.Doc;
 
 import dto.Doctor;
+import dto.Patient;
 import dto.Staff;
 
 public class Dao {
@@ -32,6 +33,13 @@ public	 void saveStaff(Staff staff) {
       et.begin();
       em.persist(doctor);
       et.commit();
+	}
+	
+	
+	public void savePatient(Patient patient) {
+		et.begin();
+		em.persist(patient);
+		et.commit();
 	}
 	
 	public Staff searchByMobile(long mobile) {
@@ -96,6 +104,16 @@ public void updateDoctor( Doctor doctor) {
     et.begin();
     em.merge(doctor);
     et.commit();
+}
+
+public Patient fetchPatient(long mobile) {
+	List<Patient> list = em.createQuery("select x from Patient x where mobile=?1").setParameter(1, mobile)
+			.getResultList();
+	if (list.isEmpty()) {
+		return null;
+	} else {
+		return list.get(0);
+	}
 }
 
 public void updateStaff(Staff staff) {

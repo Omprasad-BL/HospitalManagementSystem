@@ -12,7 +12,6 @@
 
 
 <% List<Staff> list = (List<Staff>) request.getAttribute("list");%>
-
 <table border="1">
    <tr>
    <td>Id </td>
@@ -25,11 +24,11 @@
    <%   for(Staff staff:list){  %>
    
 	   <tr>
-	   <th><% staff.getId(); %></th>
-	   	   <th><% staff.getName();%></th>
-	   	   <th><% staff.getMobile();%></th>
-	   	   <th><% staff.isStatus();%></th>
-	   	   	<th> <button type="submit"> <a href="ChangeStaffStatus?id=<%= staff.getId()%>">Change</a> </button> </th>
+	   <th><%= staff.getId() %></th>
+	   	   <th><%= staff.getName()%></th>
+	   	   <th><%= staff.getMobile()%></th>
+	   	   <th><%= staff.isStatus()%></th>
+	   	   	<th> <button > <a href="ChangeStaffStatus?id=<%=staff.getId()%>">Change</a> </button> </th>
 	     	   </tr>   
 	   
  <% }

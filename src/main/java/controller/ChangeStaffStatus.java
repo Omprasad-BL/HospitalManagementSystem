@@ -22,16 +22,18 @@ public class ChangeStaffStatus extends HttpServlet{
 		Staff staff=dao.fetcStaff(id);
 		if (staff.isStatus()) {
 			staff.setStatus(false);
+//			resp.getWriter().print("<h1>Updated to False </h1>");
 			
 		}
 		else {
 			staff.setStatus(true);
-			
+		}
 			dao.updateStaff(staff);
 			resp.getWriter().print("<h1>Updated successfully </h1>");
 			req.setAttribute("list", dao.fetcAllStaff());
+			
 			req.getRequestDispatcher("ApproveStaff.jsp").include(req, resp);
-		}
+		
 		
 	}
 	

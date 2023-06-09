@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.Dao;
 import dto.Doctor;
 import dto.Staff;
-@WebServlet("/FetchAllStaff")
+@WebServlet("/fetchAllStaff")
 public class FetchAllStaff  extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,7 +28,7 @@ public class FetchAllStaff  extends HttpServlet{
 		}
 		else {
 			req.setAttribute("list", list);
-			req.getRequestDispatcher("ApproveStaff.jsp").include(req, resp);
+			req.getRequestDispatcher("ApproveStaff.jsp").forward(req, resp);
 		}
 		
 		
