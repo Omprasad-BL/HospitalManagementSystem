@@ -3,17 +3,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Patient</title>
+<link href="./css/Addpatient.css" rel="stylesheet">
 </head>
 <body>
-<h1>Enter Patient Details</h1>
+<div class="container">
 <form action="AddPatient" method="post" enctype="multipart/form-data">
-Name:<input type="text" name="name"><br>
-Mobile:<input type="tel" name="mobile" pattern="{0-9}[10]"><br>
-DOB:<input type="date" name="dob"><br>
-Picture:<input type="file" name="picture"><br>
+    <h1>Enter Patient Details</h1>
+
+Name:<input type="text" name="name">
+Mobile:<input type="tel" name="mobile" pattern="{0-9}[10]">
+DOB:<input type="date" name="dob">
+Picture:<input type="file" name="picture">
 <button>Add</button><button type="reset">Cancel</button>
-</form>
-<br>
 <a href="StaffHome.html"><button>Back</button></a>
+
+</form>
+</div>
 </body>
 </html>

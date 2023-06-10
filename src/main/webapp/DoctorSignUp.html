@@ -1,68 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: grid;
+      height: 100svh;
+      width: 100svw;
+      align-items: center;
+      background: linear-gradient(70deg, #002B5B, #256D85);
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+      color: aliceblue;
+
+    }
+
+    .container {
+      /* display: grid; */
+      width: 100%;
+      height: 100%;
+    }
+
+    td {
+      text-transform: capitalize;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      /* width: max-content; */
+      padding: 10px;
+      width:max-content;
+      background-color: #256D85;
+      color: #ffffff;
+    }
+    input:not(input[type="subimt"], input[type="reset"]), input{
+      padding: 10px;
+      font-size: 20px
+    
+    }
+
+    input {
+      width: 100%;
+      padding-left: 2px;
+      color: #241a1a;
+    }
+    /* td input::placeholder{
+      color: #002B5B;
+    } */
+    #gen{
+      display: flex;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="container">
     <h1>Enter doctor details</h1>
     <form action="doctorSignUp" method="post">
-    
-    <table>
-  <tr>
-    <th>
-       <tr> <td>name:</td>
-        <td><input type="text" name="name" id="name"></td></tr>
-    </th>
-  </tr>
 
-  <tr>
-    <td>Mobile</td>
-    <td><input type="tel" name="mobile" id="mobile"></td>
-  </tr>
+      <table>
+        <tr>
+          <th>
+        <tr>
+          <td>name:</td>
+          <td><input type="text" name="name" id="name" placeholder="Ex: Omprasad B L"></td>
+        </tr>
+        </th>
+        </tr>
 
-  <tr>
-     <td>Email</td>
-     <td><Input type="email" name="email" id="email"></Input></td>
-  </tr>
-  <tr>
+        <tr>
+          <td>Mobile</td>
+          <td><input type="tel" name="mobile" id="mobile" placeholder="Ex: 1234-567-890"></td>
+        </tr>
 
-    <td>
-        passowrd
-    </td>
+        <tr>
+          <td>Email</td>
+          <td><Input type="email" name="email" id="email" placeholder="Ex: Example@gmail.com"></Input></td>
+        </tr>
+        <tr>
 
-    <td>
-        <input type="text" name="password" id="password">
-    </td>
-  </tr>
-  <tr>
-    <td>dob</td>
-    <td><input type="date" name="date" id="date"></td>
-  </tr>
-  <tr>
-    <td>gender</td>
-    <td>
-        <input type="radio" name="gender"  value="Male" required>male 
-        <input type="radio" name="gender" value="Female"> Female
-    </td>
-  </tr>
+          <td>
+            passowrd
+          </td>
 
-  <tr>
-    <td>Qualifivcations</td>
-    <td><input type="text" name="qualification"></td>
-  </tr>
-  <tr>
-    <td>specialization</td>
-    <td><input type="text" name="specialization" id="specialization"></td>
-  </tr>
+          <td>
+            <input type="text" name="password" id="password" placeholder="Ex: Passowrd">
+          </td>
+        </tr>
+        <tr>
+          <td>dob</td>
+          <td><input type="date" name="date" id="date" placeholder="Ex: EnterDate"></td>
+        </tr>
+        <tr>
+          <td>gender</td>
+          <td id="gen">
+            <input type="radio" name="gender" value="Male" required>male
+            <input type="radio" name="gender" value="Female" > Female
+          </td>
+        </tr>
 
-  <tr>
-<td>    <input type="submit" value="Register">
-</td>    <td><Input type="reset" value="Cancel"></td>
-  </tr>
-    </table>
+        <tr>
+          <td>Qualifivcations</td>
+          <td><input type="text" name="qualification" placeholder="Qualifivcation"></td>
+        </tr>
+        <tr>
+          <td>specialization</td>
+          <td><input type="text" name="specialization" id="specialization" placeholder="specialization"></td>
+        </tr>
+
+        <tr>
+          <td> <input type="submit" value="Register">
+          </td>
+          <td><Input type="reset" value="Cancel"></td>
+        </tr>
+      </table>
     </form>
+  </div>
 </body>
+
 </html>

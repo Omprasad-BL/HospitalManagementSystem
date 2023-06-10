@@ -1,0 +1,24 @@
+@charset "ISO-8859-1";
+.container{
+    display: grid;
+    justify-content: center;
+    background-color: yellowgreen;
+    justify-items: center;
+    height: 100vh;
+    width: 100vw;
+
+}
+form{
+    width: max-content;
+    padding: 10px;
+    margin: auto;
+    background-color: aquamarine;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+button{
+    width: max-content;
+    justify-self: center;
+}

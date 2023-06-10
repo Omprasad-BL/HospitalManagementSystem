@@ -5,10 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+          body {
+      display: grid;
+      height: 100svh;
+      width: 100svw;
+      align-items: center;
+      background: linear-gradient(70deg, #002B5B, #256D85);
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+      color: aliceblue;
+
+    }
+   form{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    /* gap: 10px; */
+   }
+   a{
+    width: inherit;
+    text-align: center;
+    
+   }
+   input{
+    width: 100%;
+   }
+    td {
+      text-transform: capitalize;
+    }
+ .buttons{
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+    text-align: center;
+   
+ }
+
+ #gen{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+ }
+ button{
+    margin-top: 8px;
+    padding: 10px;
+    background-color: #002B5B;
+    color: white;
+ }
+
+ input{
+    padding: 10px;
+ }
+
+
+    </style>
 </head>
 <body>
-    <h1>Enter Staff Details</h1><br>
     <form action="staffSignUp" method="post">
+        <h1>Enter Staff Details</h1><br>
+
      <table>
         <tr>
             <th><label for="name">Name: </label></th>
@@ -32,18 +92,23 @@
         </tr> 
         <tr>
             <th><label for="gender">Gender: </label></th>
-            <th>
+            <th id="gen">
                 <input type="radio" name="gender" value="
                 male" id="gender">Male
                 <input type="radio" name="gender" value="female" id="gender">Female
-            </th>
-        </tr> 
-            <th><button type="reset">cancel</button></th>
-            <th><button>Register</button></th>
-        </tr>
+            </th> 
+        </tr > 
+            
      </table>
+     <div class="buttons">
+        <button type="reset">Cancel</button>
+     
+     <button>Register</button>
+     </div>
+
+     <a href="SelectRole.html"><button>Back</button></a>
+
     </form>
-    <br><br>
-    <a href="SelectRole.html"><button>Back</button></a>
+    
 </body>
 </html>

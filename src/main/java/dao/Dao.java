@@ -131,6 +131,10 @@ public List<Staff> fetcAllStaff() {
 	return em.createQuery("select x from Staff x").getResultList();
 }
 
+public List<Patient> fetchAllPatient() {
+	return em.createQuery("select x from Patient x").getResultList();
+}
+
 		
 	
 }
