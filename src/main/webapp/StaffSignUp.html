@@ -25,15 +25,21 @@
     width: 100%;
     display: grid;
     justify-content: center;
+    /* border: 1px groove black; */
     /* gap: 10px; */
    }
-   a{
-    width: inherit;
+   a>button{
+    width: 100%;
+    /* justify-self: center; */
     text-align: center;
     
    }
+   table{
+    all: unset;
+   }
    input{
     width: 100%;
+    color: #002B5B;
    }
     td {
       text-transform: capitalize;
@@ -59,7 +65,7 @@
  }
 
  input{
-    padding: 10px;
+    padding-block: 8px;
  }
 
 
@@ -72,23 +78,23 @@
      <table>
         <tr>
             <th><label for="name">Name: </label></th>
-            <th><input type="text" name="name" id="name"></th>
+            <th><input type="text" name="name" id="name" placeholder="Name"></th>
         </tr>
         <tr>
             <th><label for="mobile">Mobile: </label></th>
-            <th><input type="tel" pattern="{0-9}[10]" name="mobile" id="mobile"></th>
+            <th><input type="tel" pattern="{0-9}[10]" name="mobile" placeholder="Mobile" id="mobile"></th>
         </tr> 
         <tr>
             <th><label for="email">Email: </label></th>
-            <th><input type="email" name="email" id="email"></th>
+            <th><input type="email" name="email" id="email" placeholder="Email"></th>
         </tr> 
         <tr>
             <th><label for="password">Password: </label></th>
-            <th><input type="password" name="password" id="password"></th>
+            <th><input type="password" name="password" id="password" placeholder="password"></th>
         </tr> 
         <tr>
             <th><label for="dob">DOB: </label></th>
-            <th><input type="date" name="dob" id="dob"></th>
+            <th><input type="date" name="dob" id="dob" placeholder="dob"></th>
         </tr> 
         <tr>
             <th><label for="gender">Gender: </label></th>

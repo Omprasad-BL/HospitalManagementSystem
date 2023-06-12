@@ -1,49 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            display: grid;
+            width: 100svw;
+            height: 100svh;
+            justify-content: center;
+            align-items: center;
+            background:linear-gradient(90deg, #005555,#069A8E);
+            overflow: hidden;
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: capitalize;
+        }
+        form{
+            width: 100%;
+            display: grid;
+            justify-content: center;
+            padding: 20px;
+            /* background-color: aquamarine; */
+        }
+        input{
+            padding: 10px;
+            font-size: 20px;
+        }
+         button {
+            width: 100%;
+            padding: 10px;
+            color: white;
+            background-color: #005555;
+           
+
+        }
+        h1{
+            border-bottom: 7px solid yellow;
+            line-height: 90px;
+        }
+        a{
+            color: aliceblue;
+            text-decoration: none;
+        }
+
+    </style>
 </head>
+
 <body>
-    <h1>Login form</h1>
-  <form action="login" method="post">
+   
+    <form action="login" method="post">
+        <h1>Login form</h1>
+        <table>
+            <tr>
+                <td style="color: aliceblue;">
+                    UserId:
+                </td>
+                <td>
+                    <input type="text" name="username" placeholder="UserId">
+                </td>
+            </tr>
+            <tr>
+                <td style="color: aliceblue;">
+                    password:
+                </td>
+                <td><input type="text" name="password" placeholder="Password"></td>
+            </tr>
 
-  <table>
-    <tr>
-        <td>
-          id: 
-        </td>
-        <td>
-            <input type="text" name="username">
-        </td>
-    </tr>
-    <tr>
-        <td>
-            password: 
-        </td>
-        <td><input type="text" name="password"></td>
-    </tr>
+            <tr>
+                <td> <button type="submit">Submit</button>
+                </td>
+                <td>
+                    <button type="reset">
+                        Cancel
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td> <button><a href="ForgetPassword.html">Forget passoword</a></button></td>
+                <td> <button> <a href="SelectRole.html">Create new Account</a></button>
+                </td>
+            </tr>
+           
+        </table>
 
-    <tr>
-        <td>        <button type="submit">Submit</button>
-        </td>
-        <td>
-            <button type="reset">
-                Cancel
-            </button>
-        </td>        
-    </tr>
-    <tr>
-        <td> <a href="ForgetPassword.html">Forget passoword</a></td>
-    </tr>
-    <tr>
-<td>        <button> <a href="SelectRole.html">Create new Account</a></button>
-</td>    </tr>
-  </table>
-    
 
-  </form>
+    </form>
 </body>
+
 </html>

@@ -5,10 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            display: grid;
+            width: 100svw;
+            height: 100svh;
+            justify-content: center;
+            align-items: center;
+            background-color: #005555;
+            color: aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: capitalize;
+            overflow: hidden;
+        }
+        form{
+           border: 2px solid black;
+           padding: 10px;
+        }
+        button{
+            padding: 10px;
+            background-color: #005555;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <h1>select Account type</h1>
+ 
     <form action="RoleType" method="post">
+        <h1>select Account type</h1>
 <!-- in both line anywhere you can add require  -->
      Doctor:   <input type="radio" name="role" value="doctor" required> <br>
      Staff:   <input type="radio" name="role" value="staff"> <br>

@@ -3,10 +3,43 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Patient</title>
-<link href="./css/Addpatient.css" rel="stylesheet">
+<style>
+    body{
+        display: grid;
+        width: 100svw;
+        height: 100svh;
+        background-color: #204051;
+        justify-content: center;
+        color: aliceblue;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+    input{
+        padding: 10px;
+    }
+    form{
+        display: grid;
+        width: 100%;
+        /* background: #84A9AC; */
+    }
+    .buttons{
+        width: 100%;
+        display: grid;
+        /* justify-content: center; */
+    }
+    .buttons button , .buttons a{
+        width: 100%;
+        margin: 5px;
+        padding-block: 10px;
+        background-color: rgb(6, 41, 43);
+        color: aliceblue;
+        text-align: center;
+    }
+</style> 
 </head>
 <body>
-<div class="container">
+
 <form action="AddPatient" method="post" enctype="multipart/form-data">
     <h1>Enter Patient Details</h1>
 
@@ -14,10 +47,11 @@ Name:<input type="text" name="name">
 Mobile:<input type="tel" name="mobile" pattern="{0-9}[10]">
 DOB:<input type="date" name="dob">
 Picture:<input type="file" name="picture">
-<button>Add</button><button type="reset">Cancel</button>
-<a href="StaffHome.html"><button>Back</button></a>
+<div class="buttons">
+    <button>Add</button><button type="reset">Cancel</button>
+<a href="StaffHome.html">Back</a>
+</div>
 
 </form>
-</div>
 </body>
 </html>
