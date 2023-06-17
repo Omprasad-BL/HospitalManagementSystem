@@ -9,9 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
+import lombok.Data;
+
 //import lombok.Data;
 @Entity
-//@Data
+@Data
 public class Doctor {
 
 	  @Id
@@ -28,81 +30,18 @@ public class Doctor {
 	   private String qualification;
 	   private String specialization;
 	   private boolean status;
+	   private boolean available;
 
-	   
-	   public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public String name() {
-		return name;
-	}
-	public void setName(String name2) {
-		this.name = name2;
-	}
-	public long getMobile() {
-		return mobile;
-	}
-	public void setMobile(long mobile) {
-		this.mobile = mobile;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getPassowrd() {
-		return passowrd;
-	}
-	public void setPassowrd(String passowrd) {
-		this.passowrd = passowrd;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	public Date getDob() {
-		return dob;
-	}
-	public void setDob(Date dob) {
-		this.dob = dob;
-	}
-//	public int getAge() {
-//		return age;
-//	}
-//	public void setAge(int age) {
-//		this.age = age;
-//	}
-	public String getQualification() {
-		return qualification;
-	}
-	public void setQualification(String qualification) {
-		this.qualification = qualification;
-	}
-	public String getSpecialization() {
-		return specialization;
-	}
-	public void setSpecialization(String specialization) {
-		this.specialization = specialization;
-	}
-	public boolean isStatus() {
-		return status;
-	}
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
+
+	
+
    
 	
 	@OneToMany
-    List <Appointment> list;	
+    List <Appointment> appointments;
+
+
+		
 
 	
 }

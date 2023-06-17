@@ -21,7 +21,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	
 
 	Dao dao=new Dao();
-	Doctor doctor=dao.fetcDoctor(id);
+	Doctor doctor=dao.fetchDoctor(id);
 	Staff staff=dao.fetcStaff(id);
 	
 	
@@ -42,12 +42,14 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 		if(staff!=null) {
 			if(staff.getPassowrd().equals(psw)) {
 				if (staff.isStatus()) {
+				req.getSession().setAttribute("staff", staff);
+//				PASSING STAFF AS SESSION OBJECT
 				
 			resp.getWriter().print("<h1> staff success </h1>");
 			req.getRequestDispatcher("StaffHome.html").include(req, resp);
 			}
 			else {
-				resp.getWriter().print("<h1> wait for admin approval</h1>");
+				resp.getWriter().print("<h1> wait for controller approval</h1>");
 				req.getRequestDispatcher("Login.html").include(req, resp);
 			}
 			}
@@ -66,7 +68,8 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 		if(doctor!=null) {
 			if(doctor.getPassowrd().equals(psw)) {
 				if (doctor.isStatus()) {
-
+//					Add session
+					req.getSession().setAttribute("staff", staff);
 			resp.getWriter().print("<h1> Doctor success </h1>");
 			req.getRequestDispatcher("DoctorHome.html").include(req, resp);
 			}
@@ -87,6 +90,9 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 		
 		if(id==999999) {
 			if(psw.equals("999999")) {
+//				session for controller
+				req.getSession().setAttribute("controller", "controller");
+
 				resp.getWriter().print("<h1> Success </h1>");
 				req.getRequestDispatcher("Admin.jsp").include(req, resp);
 			}

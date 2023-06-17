@@ -23,7 +23,7 @@ public class ForgetPassword extends HttpServlet {
 		String password= req.getParameter("passowrd");
 		
 		Dao dao= new Dao();
-		Doctor doctor= dao.fetcDoctor(id);
+		Doctor doctor= dao.fetchDoctor(id);
 		Staff staff=dao.fetcStaff(id);
 		if (staff==null && doctor==null) {
 			resp.getWriter().print("<h1> invalid </h1>");

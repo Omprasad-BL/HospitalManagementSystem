@@ -10,8 +10,8 @@
 	<button> <a href="fetchAllStaff">Approve Staff</a> </button>
 	<button> <a href="fetchAllDoctor">Approve Doctor</a> </button>
 	
-	
-	<button> <a href="fetchAll">  View all</a> </button>
-	<button> <a href="logout.jsp">Logout</a> </button>
+<a href="fetchallpatient"><button>View All Patients</button></a><br>
+<br>
+<a href="logout"><button>Logout</button></a>
 </body>
 </html>

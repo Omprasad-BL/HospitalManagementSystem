@@ -25,7 +25,7 @@ public class StaffSignUp extends HttpServlet {
     	String gender= req.getParameter("gender");
     	Dao access= new Dao();
     	Staff staff=new Staff();
-
+ 
     	if (access.searchByMobile(mobile)==null && access.searchByEmail(email)==null) {
 			
     

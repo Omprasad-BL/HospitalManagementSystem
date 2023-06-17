@@ -19,7 +19,7 @@ public class ChangeDoctorStatus extends HttpServlet{
 		
 		int id= Integer.parseInt(req.getParameter("id"));
 		Dao dao= new Dao();
-		Doctor doctor=dao.fetcDoctor(id);
+		Doctor doctor=dao.fetchDoctor(id);
 		if (doctor.isStatus()) {
 			doctor.setStatus(false);
 			
