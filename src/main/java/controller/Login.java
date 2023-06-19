@@ -69,7 +69,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 			if(doctor.getPassowrd().equals(psw)) {
 				if (doctor.isStatus()) {
 //					Add session
-					req.getSession().setAttribute("staff", staff);
+					req.getSession().setAttribute("doctor", doctor);
 			resp.getWriter().print("<h1> Doctor success </h1>");
 			req.getRequestDispatcher("DoctorHome.html").include(req, resp);
 			}
@@ -91,7 +91,10 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 		if(id==999999) {
 			if(psw.equals("999999")) {
 //				session for controller
-				req.getSession().setAttribute("controller", "controller");
+//				String controller="controller";
+//				req.getSession().setAttribute("controller", controller);
+				req.getSession().setAttribute("admin", "admin");
+
 
 				resp.getWriter().print("<h1> Success </h1>");
 				req.getRequestDispatcher("Admin.jsp").include(req, resp);

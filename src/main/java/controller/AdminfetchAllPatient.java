@@ -16,7 +16,7 @@ import dto.Patient;
 public class AdminfetchAllPatient extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		if(req.getSession().getAttribute("controller")==null)
+		if(req.getSession().getAttribute("admin")==null)
 		{
 			resp.getWriter().print("<h1 style='color:red'>Session Expired</h1>");
 			req.getRequestDispatcher("Login.html").include(req, resp);
