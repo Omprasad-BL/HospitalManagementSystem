@@ -46,6 +46,6 @@
 	</table>
 	<br>
 	<br>
-	<a href="BookAppointment.jsp"><button>Back</button></a>
+	<a href="StaffHome.html"><button>Back</button></a>
 </body>
 </html>
