@@ -7,46 +7,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        
         body{
-            display: grid;
-            width: 100svw;
-            height: 100svh;
-            justify-content: center;
-            align-items: center;
-            background:linear-gradient(90deg, #005555,#069A8E);
-            overflow: hidden;
-            font-size: 30px;
             font-family: Arial, Helvetica, sans-serif;
-            text-transform: capitalize;
-        }
-        form{
-            width: 100%;
-            display: grid;
-            justify-content: center;
-            padding: 20px;
-            /* background-color: aquamarine; */
-        }
-        input{
-            padding: 10px;
-            font-size: 20px;
-        }
-         button {
-            width: 100%;
-            padding: 10px;
-            color: white;
-            background-color: #005555;
-           
+    display: flex;
+    flex-direction: column;
+    width: 100svw;
+    height: 100svh;
+    background: #095d7e;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 
-        }
-        h1{
-            border-bottom: 7px solid yellow;
-            line-height: 90px;
-        }
-        a{
-            color: aliceblue;
-            text-decoration: none;
-        }
+}
+     
+        .options1, .options2{
+    display: flex;
+    justify-content: space-around;
+ }
 
+ form{
+  
+
+    display: grid;
+    justify-content: space-around;
+    gap: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    background:#256D85;
+ }
+
+
+ /* CSS */
+.button-15 {
+    width: 60%;
+    margin: 5px;
+    text-decoration: none;
+  background-image: linear-gradient(#42A1EC, #0070C9);
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-15:disabled {
+  cursor: default;
+  opacity: .3;
+}
+
+.button-15:hover {
+  background-image: linear-gradient(#51A9EE, #147BCD);
+  border-color: #1482D0;
+  text-decoration: none;
+}
+
+.button-15:active {
+  background-image: linear-gradient(#3D94D9, #0067B9);
+  border-color: #006DBC;
+  outline: none;
+}
+
+.button-15:focus {
+  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+  outline: none;
+}
+.user-place, .password-place{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    
+}
+input::placeholder,input {
+    /* all: unset; */
+	background-color: white;  /*This will apply the white background color of the placeholder*/
+	color: gray;	/*This will set the gray color of the placeholder text*/
+        text-align: center;   /*This will align the text of placeholder in the center*/
+        padding:5px 5px;
+        font-size: 15px;
+        border: none;
+        border-radius: 10px;
+    } 
+    input{
+        color: black;
+    }
     </style>
 </head>
 
@@ -54,40 +115,31 @@
    
     <form action="login" method="post">
         <h1>Login form</h1>
-        <table>
-            <tr>
-                <td style="color: aliceblue;">
-                    UserId:
-                </td>
-                <td>
-                    <input type="text" name="username" placeholder="UserId">
-                </td>
-            </tr>
-            <tr>
-                <td style="color: aliceblue;">
-                    password:
-                </td>
-                <td><input type="text" name="password" placeholder="Password"></td>
-            </tr>
+        
+            
+             
+ <div class="user-place">
+    <label for="UserName">UserName</label>
+    <input type="text" name="username" id="UserName" placeholder="UserId">
 
-            <tr>
-                <td> <button type="submit">Submit</button>
-                </td>
-                <td>
-                    <button type="reset">
-                        Cancel
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td> <button><a href="ForgetPassword.html">Forget passoword</a></button></td>
-                <td> <button> <a href="SelectRole.html">Create new Account</a></button>
-                </td>
-            </tr>
-           
-        </table>
+ </div>           
+  <div class="password-place">
+    <label for="password">Password</label>
+    <input type="text" id="password" name="password" placeholder="Password">
 
+  </div>            
 
+         <div class="options1">
+
+            <button type="submit" class="button-15">Submit</button>
+               
+                    <button type="reset" class="button-15">  Cancel</button>
+         </div>
+             
+             <div class="options2">
+               <a href="ForgetPassword.html" class="button-15">Forget passoword</a>
+                 <a href="SelectRole.html" class="button-15">Create new Account</a>
+             </div>
     </form>
 </body>
 

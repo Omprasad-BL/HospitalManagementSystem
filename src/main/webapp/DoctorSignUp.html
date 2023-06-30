@@ -8,56 +8,100 @@
   <title>Document</title>
   <style>
     body {
+      font-family: Arial, Helvetica, sans-serif;
       display: grid;
       height: 100svh;
       width: 100svw;
       align-items: center;
-      background: linear-gradient(70deg, #002B5B, #256D85);
+      background:#095d7e;
       justify-content: center;
       overflow: hidden;
     }
 
-    * {
-      font-family: Arial, Helvetica, sans-serif;
-      color: aliceblue;
-
-    }
-
-    .container {
-      /* display: grid; */
+    .buttons{
       width: 100%;
-      height: 100%;
+    display:flex;
+    margin: 10px;
+   gap: 10px;
+    justify-content: space-around;
+ }
+ input::placeholder,input {
+    /* all: unset; */
+	background-color: white;  /*This will apply the white background color of the placeholder*/
+	color: gray;	/*This will set the gray color of the placeholder text*/
+        text-align: center;   /*This will align the text of placeholder in the center*/
+        padding:5px 5px;
+        font-size: 15px;
+        border: none;
+        border-radius: 10px;
+    } 
+    input{
+        color: black;
     }
-
-    td {
-      text-transform: capitalize;
-    }
-
-    input[type="submit"],
-    input[type="reset"] {
-      /* width: max-content; */
-      padding: 10px;
-      width:max-content;
-      background-color: #256D85;
-      color: #ffffff;
-    }
-    input:not(input[type="subimt"], input[type="reset"]), input{
-      padding: 10px;
-      font-size: 20px
+ .name-place, .email-place,.mobile-place ,.date-place, .dob-place ,.password-place,
+  .gender-place, .specialization-place, .qualification-place{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
     
-    }
+}
+.container{
+  background: #256D85;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
 
-    input {
-      width: 100%;
-      padding-left: 2px;
-      color: #241a1a;
-    }
-    /* td input::placeholder{
-      color: #002B5B;
-    } */
-    #gen{
-      display: flex;
-    }
+/* CSS */
+.button-15 {
+    width: 60%;
+    margin: 5px;
+    text-decoration: none;
+  background-image: linear-gradient(#42A1EC, #0070C9);
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-15:disabled {
+  cursor: default;
+  opacity: .3;
+}
+
+.button-15:hover {
+  background-image: linear-gradient(#51A9EE, #147BCD);
+  border-color: #1482D0;
+  text-decoration: none;
+}
+
+.button-15:active {
+  background-image: linear-gradient(#3D94D9, #0067B9);
+  border-color: #006DBC;
+  outline: none;
+}
+
+.button-15:focus {
+  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+  outline: none;
+}
   </style>
 </head>
 
@@ -66,62 +110,65 @@
     <h1>Enter doctor details</h1>
     <form action="doctorSignUp" method="post">
 
-      <table>
-        <tr>
-          <th>
-        <tr>
-          <td>name:</td>
-          <td><input type="text" name="name" id="name" placeholder="Ex: Omprasad B L"></td>
-        </tr>
-        </th>
-        </tr>
+      
+  <div class="name-place">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" placeholder="Ex: Omprasad B L">
 
-        <tr>
-          <td>Mobile</td>
-          <td><input type="tel" name="mobile" id="mobile" placeholder="Ex: 1234-567-890"></td>
-        </tr>
+  </div>        
 
-        <tr>
-          <td>Email</td>
-          <td><Input type="email" name="email" id="email" placeholder="Ex: Example@gmail.com"></Input></td>
-        </tr>
-        <tr>
+<div class="mobile-place">
+  <label for="mobile">Mobile</label>
+  <input type="tel" name="mobile" id="mobile" placeholder="Ex: 1234-567-890">
 
-          <td>
-            passowrd
-          </td>
+</div>       
 
-          <td>
-            <input type="text" name="password" id="password" placeholder="Ex: Passowrd">
-          </td>
-        </tr>
-        <tr>
-          <td>dob</td>
-          <td><input type="date" name="date" id="date" placeholder="Ex: EnterDate"></td>
-        </tr>
-        <tr>
-          <td>gender</td>
-          <td id="gen">
-            <input type="radio" name="gender" value="Male" required>male
-            <input type="radio" name="gender" value="Female" > Female
-          </td>
-        </tr>
+<div class="email-place">
+  <label for="emial">Email</label>
+  <Input type="email" name="email" id="email" placeholder="Ex: Example@gmail.com"></Input>
 
-        <tr>
-          <td>Qualifivcations</td>
-          <td><input type="text" name="qualification" placeholder="Qualifivcation"></td>
-        </tr>
-        <tr>
-          <td>specialization</td>
-          <td><input type="text" name="specialization" id="specialization" placeholder="specialization"></td>
-        </tr>
+</div>       
 
-        <tr>
-          <td> <input type="submit" value="Register">
-          </td>
-          <td><Input type="reset" value="Cancel"></td>
-        </tr>
-      </table>
+<div class="password-place">
+  <label for="password">Password</label>
+  <input type="text" name="password" id="password" placeholder="Ex: Passowrd">
+
+</div> 
+<div class="date-place">
+  <label for="date">Date</label>
+  <input type="date" name="date" id="date" placeholder="Ex: EnterDate">
+
+</div>      
+          <div class="gender-place">
+            <label >Gender: </label>
+                <div class="gender-values">
+                    <label for="gender1">Male</label>  <input type="radio" id="gender1" name="gender" value="
+                    male" id="gender" required>
+                    <label for="gender2">Female</label>
+                    <input type="radio" name="gender" value="female" id="gender2">
+                </div>
+       
+         </div>
+         
+
+   <div class="qualification-place">
+    <label for="qualification">Qualifivcation</label>
+    <input type="text" name="qualification" id="qualification" placeholder="Qualifivcation">
+   </div>   
+
+   <div class="specialization-place">
+    <label for="specialization">Specialization</label>
+    <input type="text" name="specialization" id="specialization" placeholder="specialization">
+
+   </div>
+        <div class="buttons">
+          
+          <input type="submit" class="button-15" value="Register">
+      
+         <Input type="reset" class="button-15" value="Cancel">
+        </div>
+   
+    
     </form>
   </div>
 </body>

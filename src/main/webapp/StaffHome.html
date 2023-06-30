@@ -4,16 +4,132 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<style>
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100svw;
+    height: 100svh;
+    background: #095d7e;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+body>h1{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.container{
+    background-color: 	#14967f;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+ .controls{
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+ }
+ .buttons{
+    display: grid;
+    justify-items: center;
+ }
+/* CSS */
+.button-33 {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+
+/* CSS */
+.button-15 {
+    width: 60%;
+    margin: 5px;
+    text-decoration: none;
+  background-image: linear-gradient(#42A1EC, #0070C9);
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-15:disabled {
+  cursor: default;
+  opacity: .3;
+}
+
+.button-15:hover {
+  background-image: linear-gradient(#51A9EE, #147BCD);
+  border-color: #1482D0;
+  text-decoration: none;
+}
+
+.button-15:active {
+  background-image: linear-gradient(#3D94D9, #0067B9);
+  border-color: #006DBC;
+  outline: none;
+}
+
+.button-15:focus {
+  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+  outline: none;
+}
+</style>
 <body>
-<h1> STAFF HOME	</h1>
+<div class="container">
+    <h1> STAFF HOME	</h1>
  
-<a href="AddPatient.html"><button>Add Patient</button></a><br><br>
-<a href="BookAppointment.jsp"><button>Book Appointment</button></a><br><br>
-<a href="fetchallpatient"><button>View Patient History</button></a><br><br>
-<a href="EnterPatientid.html"><button>Edit Patient Details</button></a><br><br>
-<br>
-<a href="logout"><button>Logout</button></a>
-<a href="Login.html"><button>Back</button></a> 
+ <div class="controls">
+    <a href="AddPatient.html" class="button-33" >Add Patient</a>
+    <a href="BookAppointment.jsp" class="button-33">Book Appointment</a>
+    <a href="fetchallpatient" class="button-33">View Patient History</a>
+    <a href="EnterPatientid.html" class="button-33">Edit Patient Details</a>
+ </div>
+
+<div class="buttons">
+    <a href="logout" class="button-15">Logout</a>
+<a href="Login.html"  class="button-15">Back</a>
+</div>
+</div> 
 
 </body>
 </html>
