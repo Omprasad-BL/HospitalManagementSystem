@@ -3,55 +3,139 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Patient</title>
-<style>
-    body{
-        display: grid;
-        width: 100svw;
-        height: 100svh;
-        background-color: #204051;
-        justify-content: center;
-        color: aliceblue;
-        align-items: center;
-        font-family: Arial, Helvetica, sans-serif;
-
-    }
-    input{
-        padding: 10px;
-    }
-    form{
-        display: grid;
-        width: 100%;
-        /* background: #84A9AC; */
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      display: grid;
+      height: 100svh;
+      width: 100svw;
+      align-items: center;
+      background:#095d7e;
+      justify-content: center;
+      overflow: hidden;
     }
     .buttons{
-        width: 100%;
-        display: grid;
-        /* justify-content: center; */
+      width: 100%;
+    display:flex;
+    margin: 10px;
+   gap: 10px;
+    justify-content: space-around;
+ }
+ input::placeholder,input {
+    /* all: unset; */
+	background-color: white;  /*This will apply the white background color of the placeholder*/
+	color: gray;	/*This will set the gray color of the placeholder text*/
+        text-align: center;   /*This will align the text of placeholder in the center*/
+        padding:5px 5px;
+        font-size: 15px;
+        border: none;
+        border-radius: 10px;
+    } 
+    input{
+        color: black;
     }
-    .buttons button , .buttons a{
-        width: 100%;
-        margin: 5px;
-        padding-block: 10px;
-        background-color: rgb(6, 41, 43);
-        color: aliceblue;
-        text-align: center;
-    }
-</style> 
+  
+ .name-place, .email-place,.mobile-place ,.date-place, .dob-place  {
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    
+}
+.container{
+  background: #256D85;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+/* CSS */
+.button-15 {
+    width: 60%;
+    margin: 5px;
+    text-decoration: none;
+  background-image: linear-gradient(#42A1EC, #0070C9);
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-15:disabled {
+  cursor: default;
+  opacity: .3;
+}
+
+.button-15:hover {
+  background-image: linear-gradient(#51A9EE, #147BCD);
+  border-color: #1482D0;
+  text-decoration: none;
+}
+
+.button-15:active {
+  background-image: linear-gradient(#3D94D9, #0067B9);
+  border-color: #006DBC;
+  outline: none;
+}
+
+.button-15:focus {
+  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+  outline: none;
+}
+  </style>
 </head>
 <body>
-
+<div class="container">
 <form action="AddPatient" method="post" enctype="multipart/form-data">
-    <h1>Enter Patient Details</h1>
+    <h1>Enter Patient Details</h1>      
+  <div class="name-place">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" placeholder="Ex: Omprasad B L">
 
-Name:<input type="text" name="name">
-Mobile:<input type="tel" name="mobile" pattern="{0-9}[10]">
-DOB:<input type="date" name="dob">
-Picture:<input type="file" name="picture">
+  </div>        
+
+<div class="mobile-place">
+  <label for="mobile">Mobile</label>
+  <input type="tel" name="mobile" id="mobile" placeholder="Ex: 1234-567-890">
+
+</div>       
+
+<div class="date-place">
+  <label for="date">Date</label>
+  <input type="date" name="date" id="date" placeholder="Ex: EnterDate">
+
+</div> 
+
+<div class="picture-place">
+    <label for="picture">Picture</label>
+    <input type="file" id="picture" name="picture" required>
 <div class="buttons">
-    <button>Add</button><button type="reset">Cancel</button>
-<a href="StaffHome.html">Back</a>
-</div>
-
+        <div class="buttons">
+          
+          <input type="submit" class="button-15" value="Register">
+      
+         <Input type="reset" class="button-15" value="Cancel">
+          <a href="StaffHome.html" class="button-15">Back</a>
+        </div>
+   
+    
+    </form>
 </form>
 </body>
 </html>
